@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemon&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .section_title {
+        @apply text-4xl font-medium text-center mb-10;
+    }
+
+    .btn {
+        @apply bg-peach text-white px-5 py-3 rounded-xl hover:bg-red-300 transition duration-300 ease-in-out font-medium;
+    }
+}
