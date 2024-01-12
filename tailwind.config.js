@@ -21,7 +21,7 @@ export default {
       colors: {
         dark: "#0D160B",
         light: "#FBF5F3",
-        green: "#C0D7BB",
+        green: "#A7CD95",
         peach: "#A07178",
       }
     },

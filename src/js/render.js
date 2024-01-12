@@ -1,5 +1,9 @@
+import store from "./store";
+
 const productsWrapper = document.querySelector(".products_wrapper");
 const errorPopup = document.querySelector(".error_popup");
+const cardCounter = document.querySelector(".card_counter ");
+
 export function renderLoading(loadingState) {
     const template = `<div class = " loading_spinner flex justify-center col-span-full">
     <span class = "animate-spin">
@@ -58,4 +62,9 @@ export function renderSingleProductError(message) {
         errorPopup.classList.add("opacity-0", "-translate-y-40");
         errorPopup.classList.remove("opacity-100", "-translate-y-0");
     }, 3000)
+}
+
+export function updateCartCounter() {
+    const basket = store();
+    cardCounter.textContent = basket.length;
 }
