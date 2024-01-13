@@ -3,6 +3,9 @@ import store from "./store";
 const productsWrapper = document.querySelector(".products_wrapper");
 const errorPopup = document.querySelector(".error_popup");
 const cardCounter = document.querySelector(".card_counter ");
+const btnCart = document.querySelector(".cart_btn");
+const cartModel = document.querySelector(".cart_model ");
+const btnCartClose = document.querySelector(".cart_model_close_btn");
 
 export function renderLoading(loadingState) {
     const template = `<div class = " loading_spinner flex justify-center col-span-full">
@@ -67,4 +70,8 @@ export function renderSingleProductError(message) {
 export function updateCartCounter() {
     const basket = store();
     cardCounter.textContent = basket.length;
+}
+
+export function cartModel() {
+    btnCart.addEventListener('click', () => { })
 }
