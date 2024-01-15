@@ -2,9 +2,9 @@ import store from "./store";
 
 const productsWrapper = document.querySelector(".products_wrapper");
 const errorPopup = document.querySelector(".error_popup");
-const cardCounter = document.querySelector(".card_counter ");
+const cardCounter = document.querySelector(".card_counter");
 const btnCart = document.querySelector(".cart_btn");
-const cartModel = document.querySelector(".cart_model ");
+const cartModelEl = document.querySelector(".cart_model");
 const btnCartClose = document.querySelector(".cart_model_close_btn");
 
 export function renderLoading(loadingState) {
@@ -74,4 +74,5 @@ export function updateCartCounter() {
 
 export function cartModel() {
     btnCart.addEventListener('click', () => { })
+    cartModelEl.classList.remove("translate-x-full");
 }

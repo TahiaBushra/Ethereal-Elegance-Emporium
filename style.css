@@ -21,4 +21,19 @@
         @apply font-semibold
     }
 
+    .slide {
+        @apply h-screen w-screen overflow-hidden transition transform duration-500
+    }
+
+    .slide>img {
+        @apply w-[100%] h-[100%] object-cover
+    }
+
+    .arrow_btn {
+        @apply border-2 border-solid border-sky-300 rounded-2xl font-semibold cursor-pointer text-black bg-white px-5 py-2.5 transition duration-300
+    }
+
+    .arrow_btn:hover {
+        @apply bg-black text-white
+    }
 }
