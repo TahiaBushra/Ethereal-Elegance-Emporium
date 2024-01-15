@@ -2,7 +2,7 @@ import store from "./store";
 
 const productsWrapper = document.querySelector(".products_wrapper");
 const errorPopup = document.querySelector(".error_popup");
-const cardCounter = document.querySelector(".card_counter");
+const cartCounter = document.querySelector(".cart_counter");
 const btnCart = document.querySelector(".cart_btn");
 const cartModelEl = document.querySelector(".cart_model");
 const btnCartClose = document.querySelector(".cart_model_close_btn");
@@ -69,10 +69,25 @@ export function renderSingleProductError(message) {
 
 export function updateCartCounter() {
     const basket = store();
-    cardCounter.textContent = basket.length;
+    cartCounter.textContent = basket.length;
 }
 
 export function cartModel() {
-    btnCart.addEventListener('click', () => { })
-    cartModelEl.classList.remove("translate-x-full");
+    btnCart.addEventListener("click", () => {
+        cartModelEl.classList.remove("translate-x-full");
+    });
+    btnCartClose.addEventListener('click', () => {
+        cartModelEl.classList.add("translate-x-full");
+    })
+}
+
+export function renderCartElement() {
+    const products = store();
+    if (products.length > 0) {
+        products.forEach(product => {
+            const template = `<div>
+        <h5>${product.title}</h5></div>`;
+            cartModelEl.insertAdjacentHTML('beforeend', template)
+        })
+    }
 }
