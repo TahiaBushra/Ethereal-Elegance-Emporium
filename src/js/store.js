@@ -16,6 +16,9 @@ export default function store(action = "VIEW_BASKET", product) {
             const newBasket = basket.filter((pr) => pr.id !== product)
             basket = newBasket;
             updateLocalStorage("basket", basket);
+        case "GET_SUBTOTAL":
+            const subtotal = basket.reduce((sum, el) => (sum += el.price), 0);
+            return subtotal;
         case "VIEW_BASKET":
             return basket;
     }
