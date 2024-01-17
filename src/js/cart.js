@@ -1,4 +1,4 @@
-import { renderCartElement, updateCartCounter } from "./render";
+import { getSubtotal, renderCartElement, updateCartCounter } from "./render";
 import fetchSingleProduct from "./single-product";
 import store from "./store";
 
@@ -17,6 +17,7 @@ async function detectProduct(e) {
         store("ADD_PRODUCT", product);
         updateCartCounter();
         renderCartElement();
+        getSubtotal();
     }
 }
 
@@ -31,5 +32,6 @@ function productsRemover(e) {
         store("REMOVE_PRODUCT", productId);
         updateCartCounter();
         renderCartElement();
+        getSubtotal();
     }
 }

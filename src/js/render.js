@@ -7,7 +7,8 @@ const btnCart = document.querySelector(".cart_btn");
 const cartModelEl = document.querySelector(".cart_model");
 const btnCartClose = document.querySelector(".cart_model_close_btn");
 const cartItemsEl = document.querySelector(".cart_items");
-const cartItemCountEl = document.querySelector(".cart_items_count")
+const cartItemCountEl = document.querySelector(".cart_items_count");
+const subtotalHolder = document.querySelector(".subtotal_holder");
 
 export function renderLoading(loadingState) {
     const template = `<div class = " loading_spinner flex justify-center col-span-full">
@@ -89,9 +90,9 @@ export function renderCartElement() {
     if (products.length >= 0) {
         cartItemsEl.innerHTML = "";
         products.forEach(product => {
-            const template = `<div class="grid grid-cols-[50px_auto] gap-5 pb-5"> 
+            const template = `<div class="w-full grid grid-cols-[50px_auto] gap-5 pb-5"> 
                 <img src="${product.image}" alt="${product.title}" class="w-[50px] aspect-square object-cover rounded-full"/>
-                <div><h5 class="font-medium">${product.title.substring(0, 15)}</h5>
+                <div class = "w-full"><h5 class="font-medium">${product.title.substring(0, 15)}</h5>
                 <div class = "flex justify-between items-center">
                 <h5>$${product.price}</h5>
                 <button class = "remove_item_btn" data-id ="${product.id}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="crimson" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash-2"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg></button>
@@ -103,4 +104,7 @@ export function renderCartElement() {
     }
 }
 
-
+export function getSubtotal() {
+    const subtotal = store("GET_SUBTOTAL");
+    subtotalHolder.textContent = `$${subtotal}`;
+}
