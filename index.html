@@ -19,7 +19,7 @@
         </div>
         <h2 class="font-['cursive']">Ethereal Elegance Emporium</h2>
       </div>
-      <ul class="flex gap-5">
+      <ul class="flex gap-5 ">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#product">Product</a></li>
@@ -99,6 +99,45 @@
           <path d="m9 9 6 6" />
         </svg></button>
     </div>
+    <section id="contact" class="contact container section_margin">
+      <div class="section_title container">
+        <small>Contact</small>
+      </div>
+      <div class="contact_wrapper flex flex-wrap">
+        <!-- Contact Right -->
+        <form class="contact_right w-full md:w-1/2 p-4">
+          <!-- Name form controls -->
+          <div class="mb-4">
+            <label for="first_name" class="block text-sm font-medium text-gray-700">First Name</label>
+            <input type="text" id="first_name" name="first_name" placeholder="Sarah"
+              class="mt-1 p-2 w-full border rounded-md">
+          </div>
+          <div class="mb-4">
+            <label for="last_name" class="block text-sm font-medium text-gray-700">Last Name</label>
+            <input type="text" id="last_name" name="last_name" placeholder="Parker"
+              class="mt-1 p-2 w-full border rounded-md">
+          </div>
+
+          <!-- Email form control -->
+          <div class="mb-4">
+            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+            <input type="email" id="email" name="email" placeholder="hello@example.com"
+              class="mt-1 p-2 w-full border rounded-md">
+          </div>
+
+          <!-- Message form control -->
+          <div class="mb-4">
+            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+            <textarea id="message" name="message" rows="7" placeholder="Write your message"
+              class="mt-1 p-2 w-full border rounded-md resize-none"></textarea>
+          </div>
+
+          <!-- Submit button -->
+          <button type="submit"
+            class="btn first_btn bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Submit</button>
+        </form>
+      </div>
+    </section>
   </main>
   <!-- Footer Section -->
   <footer class="footer grid grid-cols-4 bg-white px-12 py-16 gap-5 mt-10 border-t border-gray-300">
