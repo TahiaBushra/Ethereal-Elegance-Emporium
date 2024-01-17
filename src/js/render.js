@@ -6,6 +6,8 @@ const cartCounter = document.querySelector(".cart_counter");
 const btnCart = document.querySelector(".cart_btn");
 const cartModelEl = document.querySelector(".cart_model");
 const btnCartClose = document.querySelector(".cart_model_close_btn");
+const cartItemsEl = document.querySelector(".cart_items");
+const cartItemCountEl = document.querySelector(".cart_items_count")
 
 export function renderLoading(loadingState) {
     const template = `<div class = " loading_spinner flex justify-center col-span-full">
@@ -81,13 +83,5 @@ export function cartModel() {
     })
 }
 
-export function renderCartElement() {
-    const products = store();
-    if (products.length > 0) {
-        products.forEach(product => {
-            const template = `<div>
-        <h5>${product.title}</h5></div>`;
-            cartModelEl.insertAdjacentHTML('beforeend', template)
-        })
-    }
-}
+
+
